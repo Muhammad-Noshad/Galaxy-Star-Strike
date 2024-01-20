@@ -13,3 +13,5 @@ element.style.setProperty('margin-left', '50px');
 Open a new terminal and use the following commands
 -> git config user.name "input here"
 -> git config user.email "input here"
+
+5. Position absolute doesn't disturb the position of other elements

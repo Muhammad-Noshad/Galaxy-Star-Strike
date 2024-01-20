@@ -26,21 +26,14 @@ body{
   width: 100%;
 }
 
-.main-spaceship-bullets{
-  /* background-color: blue; */
+.main-spaceship-bullets-img{
+  background-color: red;
+  
+  position: absolute;
 
   width: 35px;
   height: 35px;
 
-  /* Concealing the bullet underneath ships body */
-  margin-top: -53px;  /*Positioning it*/  
-  margin-left: 13px;
-
-  position: absolute;   /* To make z-index work */
-  z-index: -1;
-}
-
-.main-spaceship-bullets-img{
-  width: 100%;
-  height: 100%;
+  margin-left: 0px;
+  margin-right: 0px;
 }
