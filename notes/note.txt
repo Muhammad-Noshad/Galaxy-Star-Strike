@@ -1,0 +1,10 @@
+1. How to get style value of an element in js?
+const element = document.querySelector('.element-class');
+const valueOfMarginLeft = getComputedStyle(element).getPropertyValue('margin-left');
+
+2. How to change the style of an element in js?
+const element = document.querySelector('.element-class');
+element.style.setProperty('margin-left', '50px');
+
+3. How to apply z-index properly?
+"The z-index property only works on elements with a position value other than static (e.g. position: absolute;, position: relative;, position: fixed or position: sticky)."
