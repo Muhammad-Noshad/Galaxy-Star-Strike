@@ -8,3 +8,8 @@ element.style.setProperty('margin-left', '50px');
 
 3. How to apply z-index properly?
 "The z-index property only works on elements with a position value other than static (e.g. position: absolute;, position: relative;, position: fixed or position: sticky)."
+
+4. How do I initialize git username and email?
+Open a new terminal and use the following commands
+-> git config user.name "input here"
+-> git config user.email "input here"
