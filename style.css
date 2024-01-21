@@ -26,6 +26,15 @@ body{
   width: 100%;
 }
 
+.main-spaceship-engine-flame{
+  /* background-color: blue; */
+
+  position: absolute;
+
+  margin-left: -35.5px;
+  margin-top: 10px;
+}
+
 .main-spaceship-bullets-img{
   background-color: red;
   

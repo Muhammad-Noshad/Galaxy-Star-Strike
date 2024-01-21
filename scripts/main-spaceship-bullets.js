@@ -36,7 +36,7 @@ class Bullet {
     setTimeout(() => { animation1(this.bulletElement) }, 700);
 
     function animation1(bulletElement){
-      bulletElement.src = "Main_Spaceship/Main ship weapons/bullets/bullet-2.png";
+      bulletElement.src = "Main_Spaceship/Main ship weapons/bullets/bullet-1.png";
     }
 
     function animation2(bulletElement){
