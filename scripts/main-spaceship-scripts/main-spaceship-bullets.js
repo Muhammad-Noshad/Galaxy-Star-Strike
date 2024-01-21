@@ -1,5 +1,5 @@
-import { pxToNum } from "./utils/convert-px-to-number.js";
-import { getMainSpaceshipX, getMainSpaceshipY } from "./utils/get-main-spaceship-coordinates.js";
+import { pxToNum } from "../utils/convert-px-to-number.js";
+import { getMainSpaceshipX, getMainSpaceshipY } from "../utils/get-main-spaceship-coordinates.js";
 
 class Bullet {
   constructor() {

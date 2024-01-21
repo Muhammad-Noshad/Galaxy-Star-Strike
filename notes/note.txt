@@ -15,3 +15,11 @@ Open a new terminal and use the following commands
 -> git config user.email "input here"
 
 5. Position absolute doesn't disturb the position of other elements
+
+6. A better way to insert an element into a HTML div:
+buttonElement.create
+  element = document.createElement('img');
+  element.src = "image_path";
+  element.alt = "image_name.png";
+  element.className = "sample-img";
+  document.querySelector('.img-div').appendChild(element);
