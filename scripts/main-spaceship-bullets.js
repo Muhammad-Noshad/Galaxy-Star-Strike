@@ -16,6 +16,8 @@ class Bullet {
     this.bulletElement.style.setProperty('margin-top', `${this.y}px`);
 
     this.bulletInterval = setInterval(() => this.moveBullet(), 50);
+
+    this.animateBulletInterval = setInterval(() => { this.animateBullet() }, 550);
   }
 
   moveBullet() {
@@ -27,9 +29,33 @@ class Bullet {
     }
   }
 
+  animateBullet(){
+    setTimeout(() => { animation2(this.bulletElement) }, 100);
+    setTimeout(() => { animation3(this.bulletElement) }, 300);
+    setTimeout(() => { animation4(this.bulletElement) }, 500);
+    setTimeout(() => { animation1(this.bulletElement) }, 700);
+
+    function animation1(bulletElement){
+      bulletElement.src = "Main_Spaceship/Main ship weapons/bullets/bullet-2.png";
+    }
+
+    function animation2(bulletElement){
+      bulletElement.src = "Main_Spaceship/Main ship weapons/bullets/bullet-2.png";
+    }
+
+    function animation3(bulletElement){
+      bulletElement.src = "Main_Spaceship/Main ship weapons/bullets/bullet-3.png";
+    }
+
+    function animation4(bulletElement){
+      bulletElement.src = "Main_Spaceship/Main ship weapons/bullets/bullet-4.png";
+    }
+  }
+
   destroy() {
     clearInterval(this.bulletInterval);
     this.bulletElement.remove();
+    clearInterval(this.animateBulletInterval);
   }
 }
 

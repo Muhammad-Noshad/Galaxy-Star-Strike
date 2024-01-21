@@ -21,18 +21,17 @@ function setMainSpaceshipCoordinates(){
 // Movement
 document.addEventListener('keydown',() => {
   const key = event.key;
-  console.log(key);
 
-  if(key === 'ArrowUp'){
+  if(key === 'w'){
     mainSpaceship.style.setProperty('margin-top', `${y -= 10}px`);
   }
-  else if(key === 'ArrowDown'){
+  else if(key === 's'){
     mainSpaceship.style.setProperty('margin-top', `${y += 10}px`);
   }
-  else if(key === 'ArrowLeft'){
+  else if(key === 'a'){
     mainSpaceship.style.setProperty('margin-left', `${x -= 10}px`);
   }
-  else if(key === 'ArrowRight'){
+  else if(key === 'd'){
     mainSpaceship.style.setProperty('margin-left', `${x += 10}px`);
   }
   else if(key === ' '){
@@ -45,6 +44,4 @@ document.addEventListener('keydown',() => {
   else if(key === 'p'){
     shootBullet();
   }
-
-  console.log(x,y);
 });
