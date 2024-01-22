@@ -23,3 +23,6 @@ buttonElement.create
   element.alt = "image_name.png";
   element.className = "sample-img";
   document.querySelector('.img-div').appendChild(element);
+
+7. Want to know the browser window height or width?
+Use window.innerHeight or window.innerWidth

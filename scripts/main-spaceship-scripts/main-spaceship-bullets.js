@@ -1,6 +1,8 @@
 import { pxToNum } from "../utils/convert-px-to-number.js";
 import { getMainSpaceshipX, getMainSpaceshipY } from "../utils/get-main-spaceship-coordinates.js";
 
+export let mainSpaceshipBullets = [];
+
 class Bullet {
   constructor() {
     this.bulletElement = document.createElement('img');
@@ -8,6 +10,8 @@ class Bullet {
     this.bulletElement.alt = "bullets.png";
     this.bulletElement.className = "main-spaceship-bullets-img";
     document.querySelector('.main-spaceship-bullets').appendChild(this.bulletElement);
+
+    mainSpaceshipBullets.push(this.bulletElement);
 
     this.x = pxToNum(getMainSpaceshipX()) + 12;
     this.y = pxToNum(getMainSpaceshipY()) - 12;
@@ -21,12 +25,13 @@ class Bullet {
   }
 
   moveBullet() {
-    this.y -= 10;
-    this.bulletElement.style.setProperty('margin-top', `${this.y}px`);
-
     if (this.y <= -30) {
       this.destroy();
+      return;
     }
+
+    this.y -= 10;
+    this.bulletElement.style.setProperty('margin-top', `${this.y}px`);
   }
 
   animateBullet(){
@@ -56,6 +61,7 @@ class Bullet {
     clearInterval(this.bulletInterval);
     this.bulletElement.remove();
     clearInterval(this.animateBulletInterval);
+    mainSpaceshipBullets.splice(mainSpaceshipBullets.indexOf(this.bulletElement), 1);
   }
 }
 
