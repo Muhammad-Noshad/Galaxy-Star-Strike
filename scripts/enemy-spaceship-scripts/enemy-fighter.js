@@ -1,11 +1,11 @@
 export let enemyFighters = [];
-
+let count = -1;
 class EnemyFighter {
   constructor() {
     this.fighterElement = document.createElement('img');
     this.fighterElement.src = "Enemy_Fleet_1/Kla'ed/Base/fighter.png";
     this.fighterElement.alt = "enemy-fighter.png";
-    this.fighterElement.className = "enemy-fighter";
+    this.fighterElement.className = `enemy-fighter ${++count}`;
     document.querySelector('.enemy-fighters').appendChild(this.fighterElement);
 
     this.x = Math.random();
@@ -21,7 +21,7 @@ class EnemyFighter {
   }
 
   moveFighter() {
-    if (this.y >= window.innerHeight) {
+    if (this.y >= window.innerHeight - 50) {
       this.destroy();
       return;
     }
@@ -33,8 +33,17 @@ class EnemyFighter {
   destroy() {
     clearInterval(this.fighterMoveInterval);
     this.animateDestruction();
-    // enemyFighters.splice(enemyFighters.indexOf(this.fighterElement), 1);
     setTimeout(() => { this.fighterElement.remove(); }, 300);
+    
+    let eF = enemyFighters.filter((element) => {
+      if(element.fighterElement === this.fighterElement){
+        return false;
+      }
+      else{
+        return true;
+      }
+    });
+    enemyFighters = eF;
   }
 
   animateDestruction(){
@@ -77,5 +86,5 @@ class EnemyFighter {
 }
 
 export function renderEnemyFighters() {
-  setInterval(() => { enemyFighters.push(new EnemyFighter()); }, 3500);   
+  setInterval(() => { enemyFighters.push(new EnemyFighter()); }, 3000);  
 }

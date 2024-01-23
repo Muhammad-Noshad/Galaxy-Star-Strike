@@ -60,6 +60,16 @@ class Bullet {
     this.bulletElement.remove();
     clearInterval(this.bulletInterval);
     clearInterval(this.animateBulletInterval);
+    
+    let mB = mainSpaceshipBullets.filter((element) => {
+      if(element.bulletElement === this.bulletElement){
+        return false;
+      }
+      else{
+        return true;
+      }
+    });
+    mainSpaceshipBullets = mB;
   }
 }
 
