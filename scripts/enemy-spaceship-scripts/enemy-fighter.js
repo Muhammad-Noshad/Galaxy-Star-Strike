@@ -3,12 +3,10 @@ export let enemyFighters = [];
 class EnemyFighter {
   constructor() {
     this.fighterElement = document.createElement('img');
-    this.fighterElement.src = "Enemy_Fleet_1/Kla'ed/Base/PNGs/Kla'ed - Fighter - Base.png";
+    this.fighterElement.src = "Enemy_Fleet_1/Kla'ed/Base/fighter.png";
     this.fighterElement.alt = "enemy-fighter.png";
     this.fighterElement.className = "enemy-fighter";
     document.querySelector('.enemy-fighters').appendChild(this.fighterElement);
-
-    enemyFighters.push(this.fighterElement);
 
     this.x = Math.random();
     this.y = -75;
@@ -17,6 +15,7 @@ class EnemyFighter {
     this.x = Number((this.x*80).toFixed(0));
 
     this.fighterElement.style.setProperty('margin-left', `${this.x}vw`);
+    this.fighterElement.style.setProperty('margin-top', `${this.y}px`);
 
     this.fighterMoveInterval = setInterval(() => this.moveFighter(), 50);
   }
@@ -33,11 +32,50 @@ class EnemyFighter {
 
   destroy() {
     clearInterval(this.fighterMoveInterval);
-    this.fighterElement.remove();
-    enemyFighters.splice(enemyFighters.indexOf(this.fighterElement), 1);
+    this.animateDestruction();
+    // enemyFighters.splice(enemyFighters.indexOf(this.fighterElement), 1);
+    setTimeout(() => { this.fighterElement.remove(); }, 300);
+  }
+
+  animateDestruction(){
+    animation1(this.fighterElement); 
+    setTimeout(() => { animation2(this.fighterElement) }, 50);
+    setTimeout(() => { animation3(this.fighterElement) }, 100);
+    setTimeout(() => { animation4(this.fighterElement) }, 150);
+    setTimeout(() => { animation5(this.fighterElement) }, 200);
+    setTimeout(() => { animation6(this.fighterElement) }, 250);
+    setTimeout(() => { animation7(this.fighterElement) }, 300);
+
+    function animation1(fighterElement){
+      fighterElement.src = "Enemy_Fleet_1/Kla'ed/Destruction/Fighter (improved)/destroy-1.png";
+    }
+
+    function animation2(fighterElement){
+      fighterElement.src = "Enemy_Fleet_1/Kla'ed/Destruction/Fighter (improved)/destroy-2.png";
+    }
+
+    function animation3(fighterElement){
+      fighterElement.src = "Enemy_Fleet_1/Kla'ed/Destruction/Fighter (improved)/destroy-3.png";
+    }
+
+    function animation4(fighterElement){
+      fighterElement.src = "Enemy_Fleet_1/Kla'ed/Destruction/Fighter (improved)/destroy-4.png";
+    }
+
+    function animation5(fighterElement){
+      fighterElement.src = "Enemy_Fleet_1/Kla'ed/Destruction/Fighter (improved)/destroy-5.png";
+    }
+
+    function animation6(fighterElement){
+      fighterElement.src = "Enemy_Fleet_1/Kla'ed/Destruction/Fighter (improved)/destroy-6.png";
+    }
+
+    function animation7(fighterElement){
+      fighterElement.src = "Enemy_Fleet_1/Kla'ed/Destruction/Fighter (improved)/destroy-7.png";
+    }
   }
 }
 
 export function renderEnemyFighters() {
-  setInterval(() => { new EnemyFighter(); }, 3500); 
+  setInterval(() => { enemyFighters.push(new EnemyFighter()); }, 3500);   
 }

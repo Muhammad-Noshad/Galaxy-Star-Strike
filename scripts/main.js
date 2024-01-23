@@ -4,4 +4,4 @@ import { checkCollisions } from "./collision-scripts/collision.js";
 
 renderMainSpaceship();
 renderEnemyFighters();
-setInterval(() => { checkCollisions(); }, 500);
+setInterval(() => { checkCollisions(); }, 50);

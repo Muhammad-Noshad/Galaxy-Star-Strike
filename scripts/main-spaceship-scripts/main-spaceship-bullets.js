@@ -6,21 +6,20 @@ export let mainSpaceshipBullets = [];
 class Bullet {
   constructor() {
     this.bulletElement = document.createElement('img');
-    this.bulletElement.src = "Main_Spaceship/Main ship weapons/bullets/bullet-1.png";
+    this.bulletElement.src = "Main_Spaceship/Main ship weapons/bullets (improved)/bullet-1.png";
     this.bulletElement.alt = "bullets.png";
     this.bulletElement.className = "main-spaceship-bullets-img";
     document.querySelector('.main-spaceship-bullets').appendChild(this.bulletElement);
 
-    mainSpaceshipBullets.push(this.bulletElement);
-
-    this.x = pxToNum(getMainSpaceshipX()) + 12;
-    this.y = pxToNum(getMainSpaceshipY()) - 12;
+    this.x = pxToNum(getMainSpaceshipX()) + 22;
+    this.y = pxToNum(getMainSpaceshipY()) - 4;
 
     this.bulletElement.style.setProperty('margin-left', `${this.x}px`);
     this.bulletElement.style.setProperty('margin-top', `${this.y}px`);
 
-    this.bulletInterval = setInterval(() => this.moveBullet(), 50);
+    this.bulletInterval = setInterval(() => this.moveBullet(), 10);
 
+    this.animateBullet();
     this.animateBulletInterval = setInterval(() => { this.animateBullet() }, 550);
   }
 
@@ -30,7 +29,7 @@ class Bullet {
       return;
     }
 
-    this.y -= 10;
+    this.y -= 3;
     this.bulletElement.style.setProperty('margin-top', `${this.y}px`);
   }
 
@@ -41,30 +40,29 @@ class Bullet {
     setTimeout(() => { animation1(this.bulletElement) }, 700);
 
     function animation1(bulletElement){
-      bulletElement.src = "Main_Spaceship/Main ship weapons/bullets/bullet-1.png";
+      bulletElement.src = "Main_Spaceship/Main ship weapons/bullets (improved)/bullet-1.png";
     }
 
     function animation2(bulletElement){
-      bulletElement.src = "Main_Spaceship/Main ship weapons/bullets/bullet-2.png";
+      bulletElement.src = "Main_Spaceship/Main ship weapons/bullets (improved)/bullet-2.png";
     }
 
     function animation3(bulletElement){
-      bulletElement.src = "Main_Spaceship/Main ship weapons/bullets/bullet-3.png";
+      bulletElement.src = "Main_Spaceship/Main ship weapons/bullets (improved)/bullet-3.png";
     }
 
     function animation4(bulletElement){
-      bulletElement.src = "Main_Spaceship/Main ship weapons/bullets/bullet-4.png";
+      bulletElement.src = "Main_Spaceship/Main ship weapons/bullets (improved)/bullet-4.png";
     }
   }
 
   destroy() {
-    clearInterval(this.bulletInterval);
     this.bulletElement.remove();
+    clearInterval(this.bulletInterval);
     clearInterval(this.animateBulletInterval);
-    mainSpaceshipBullets.splice(mainSpaceshipBullets.indexOf(this.bulletElement), 1);
   }
 }
 
 export function shootBullet() {
-  new Bullet();
+  mainSpaceshipBullets.push(new Bullet());
 }
