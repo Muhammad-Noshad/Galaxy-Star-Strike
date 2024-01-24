@@ -10,12 +10,12 @@ body{
 }
 
 .main-spaceship{
-  /* background-color: red; */
+  background-color: red;
 
   position: absolute;
 
-  width: 60px;
-  height: 60px;
+  width: 35px;
+  height: 35px;
 
   margin-left: 46vw;
   margin-top: 92vh; 
@@ -31,8 +31,7 @@ body{
 
   position: absolute;
 
-  margin-left: -35.8px;
-  margin-top: 10px;
+  margin-left: -23.1px;
 }
 
 .main-spaceship-bullets-img{
@@ -43,6 +42,5 @@ body{
   width: 16px;
   height: 20px;
 
-  margin-left: 0px;
-  margin-right: 0px;
+  margin-left: 50px;
 }

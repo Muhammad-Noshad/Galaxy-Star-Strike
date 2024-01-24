@@ -21,7 +21,7 @@ class EnemyFighter {
   }
 
   moveFighter() {
-    if (this.y >= window.innerHeight - 50) {
+    if (this.y >= window.innerHeight) {
       this.destroy();
       return;
     }

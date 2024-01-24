@@ -11,8 +11,8 @@ class Bullet {
     this.bulletElement.className = "main-spaceship-bullets-img";
     document.querySelector('.main-spaceship-bullets').appendChild(this.bulletElement);
 
-    this.x = pxToNum(getMainSpaceshipX()) + 22;
-    this.y = pxToNum(getMainSpaceshipY()) - 4;
+    this.x = pxToNum(getMainSpaceshipX()) + 10;
+    this.y = pxToNum(getMainSpaceshipY()) - 20;
 
     this.bulletElement.style.setProperty('margin-left', `${this.x}px`);
     this.bulletElement.style.setProperty('margin-top', `${this.y}px`);
