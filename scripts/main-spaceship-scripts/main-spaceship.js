@@ -1,5 +1,4 @@
 import { shootBullet } from "./main-spaceship-bullets.js";
-import { resetMainSpaceship } from "./reset-main-spaceship.js";
 import { pxToNum } from "../utils/convert-px-to-number.js";
 import { getMainSpaceshipX, getMainSpaceshipY } from "../utils/get-main-spaceship-coordinates.js";
 
