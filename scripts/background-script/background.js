@@ -1,10 +1,9 @@
 import { pxToNum } from "../utils/convert-px-to-number.js";
+import { getCSSPropertyValue } from "../utils/get-css-property.js";
 
 export function renderBackground() {  
   // Height of body
-  let height = getComputedStyle(document.body).getPropertyValue('height');
-
-  height = pxToNum(height);
+  let height = pxToNum(getCSSPropertyValue(document.body, 'height'));
 
   // Converting it so that it is divisible by 10
   height = Number((height/10).toFixed(0) + '0');
