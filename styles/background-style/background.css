@@ -1,0 +1,11 @@
+.background{
+  width: 100vw;
+  height: 1000vh;
+
+  position: absolute;
+}
+
+.background-img{
+  height: 100%;
+  width: 100%;
+}
