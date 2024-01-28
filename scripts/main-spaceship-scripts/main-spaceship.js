@@ -36,10 +36,6 @@ class MainSpaceship{
     else if(this.key === 'd'){
       this.spaceship.style.setProperty('margin-left', `${this.x += 10}px`);
     }
-    else if(this.key === 'x'){   // Reset
-      resetMainSpaceship(this.spaceship);
-      this.setMainSpaceshipCoordinates();
-    }
     else if(this.key === 'p'){
       shootBullet();
     }
