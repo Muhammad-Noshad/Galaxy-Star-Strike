@@ -1,6 +1,7 @@
 import { enemyFighters } from "../enemy-spaceship-scripts/enemy-fighter.js";
 import { mainSpaceshipBullets } from "../main-spaceship-scripts/main-spaceship-bullets.js";
 import { mainSpaceship } from "../main-spaceship-scripts/main-spaceship.js";
+import { incrementScore } from "../score-script/score.js";
 
 export function checkCollisions(){
   // can combine both of these in one function
@@ -24,6 +25,7 @@ function mainSpaceshipbulletVsEnemySpaceship(bullet, spaceship){
   if((rectBul.right >= (rectShp.left - 5) && rectBul.left <= (rectShp.right + 5)) && (rectBul.top <= rectShp.bottom && rectBul.bottom >= rectShp.top)){
     spaceship.destroy();
     bullet.destroy();
+    incrementScore();
   }
 }
 
