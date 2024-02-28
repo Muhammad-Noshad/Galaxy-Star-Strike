@@ -9,19 +9,3 @@
   height: 100%;
   width: 100%;
 }
-
-.score-section{
-  position: fixed;
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-  justify-content:center;
-  align-items:center;
-  z-index: 1000;
-}
-
-.score-txt, .score-value{
-  font-family:fantasy;
-  font-size: 40px;
-  color: white;
-}
