@@ -3,6 +3,8 @@
   height: 1000vh;
 
   position: absolute;
+
+  z-index: -100;
 }
 
 .background-img{
