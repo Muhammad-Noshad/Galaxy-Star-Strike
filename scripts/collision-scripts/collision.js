@@ -35,5 +35,6 @@ function mainSpaceshipVsEnemySpaceship(mainSpaceship, enemySpaceship){
 
   if((rectMain.right >= (rectEnemy.left - 0) && rectMain.left <= (rectEnemy.right + 0)) && (rectMain.top <= rectEnemy.bottom && rectMain.bottom >= rectEnemy.top)){
     enemySpaceship.destroy();
+    mainSpaceship.decrementLives();
   }
 }

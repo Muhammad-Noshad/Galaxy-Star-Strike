@@ -1,0 +1,62 @@
+header{
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+  display: flex;
+  justify-content:space-between;
+  background-color: black;
+}
+
+.score-section, .lives-section{
+  background-color: hsl(240, 64%, 35%);
+
+  width: 250px;
+
+  border: 2px solid white;
+}
+
+.score-section{
+  display: grid;
+  grid-template-columns: 1.7fr 1fr;
+
+  border-end-start-radius: 25px;
+  border-start-end-radius: 25px;
+}
+
+.score-txt, .score-value, .lives-txt{
+  font-family:fantasy;
+  font-size: 35px;
+  color: white;
+  margin-top: 5px;
+}
+
+.score-txt, .lives-txt{
+  margin-left: 15px;
+}
+
+.score-txt{
+  text-align: right;
+}
+
+.score-value{
+  padding-left: 3px;
+}
+
+.red-color{
+  color: red;
+  border-color: red;
+}
+
+.lives-section{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+
+  border-end-start-radius: 25px;
+  border-start-end-radius: 25px;
+}
+
+.heart-img{
+  width: 35px;
+  margin-top: 5px;
+}
