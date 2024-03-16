@@ -1,3 +1,4 @@
+import { playExplosionAudio } from "../audio-scripts/level-audio.js";
 import { enemyFighters } from "../enemy-spaceship-scripts/enemy-fighter.js";
 import { mainSpaceshipBullets } from "../main-spaceship-scripts/main-spaceship-bullets.js";
 import { mainSpaceship } from "../main-spaceship-scripts/main-spaceship.js";
@@ -26,6 +27,7 @@ function mainSpaceshipbulletVsEnemySpaceship(bullet, spaceship){
     spaceship.destroy();
     bullet.destroy();
     incrementScore();
+    playExplosionAudio();
   }
 }
 
@@ -36,5 +38,7 @@ function mainSpaceshipVsEnemySpaceship(mainSpaceship, enemySpaceship){
   if((rectMain.right >= (rectEnemy.left - 0) && rectMain.left <= (rectEnemy.right + 0)) && (rectMain.top <= rectEnemy.bottom && rectMain.bottom >= rectEnemy.top)){
     enemySpaceship.destroy();
     mainSpaceship.decrementLives();
+    playExplosionAudio();
+    incrementScore();
   }
 }

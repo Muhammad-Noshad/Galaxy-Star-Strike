@@ -1,5 +1,6 @@
 import { pxToNum } from "../utils/convert-px-to-number.js";
 import { getMainSpaceshipX, getMainSpaceshipY } from "../utils/get-main-spaceship-coordinates.js";
+import { playBulletAudio } from "../audio-scripts/level-audio.js";
 
 export let mainSpaceshipBullets = [];
 
@@ -75,4 +76,5 @@ class Bullet {
 
 export function shootBullet() {
   mainSpaceshipBullets.push(new Bullet());
+  playBulletAudio();
 }
